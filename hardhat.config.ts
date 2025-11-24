@@ -20,9 +20,25 @@ export default defineConfig({
     },
   },
   networks: {
-    hardhatMainnet: {
+    hardhatMainnetFork: {
       type: "edr-simulated",
       chainType: "l1",
+      forking: {
+        url: "https://eth-mainnet.g.alchemy.com/v2/jOQEr5fdFhpCyARWBqDQE",
+        blockNumber: 23868254,
+      },
+      accounts: [
+        {
+          privateKey:
+            "0x1111111111111111111111111111111111111111111111111111111111111111",
+          balance: "10000000000000000000000",
+        },
+        {
+          privateKey:
+            "0x2222222222222222222222222222222222222222222222222222222222222222",
+          balance: "10000000000000000000000",
+        },
+      ],
     },
     hardhatOp: {
       type: "edr-simulated",
